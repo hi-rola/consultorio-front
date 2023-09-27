@@ -1,0 +1,100 @@
+<div class="contenedor">
+  <div class="main">
+    <div class="div-p">
+      <mat-card class="card-login mat-elevation-z8">
+        <mat-card-header class="card-header">
+          <div class="div-titulo-registrar">Iniciar sesión en Boca Sana</div>
+        </mat-card-header>
+        <form [formGroup]="formLogin">
+          <mat-card-content class="card-content">
+            <p
+              *ngIf="mensajeLogin"
+              class="text-center text-danger mensaje-login"
+            >
+              ¡Correo y/o contraseña invalidos!
+            </p>
+            <div class="div-form">
+              <div class="form-1">
+                <mat-form-field appearance="fill" class="mat-form-field">
+                  <mat-label>Correo</mat-label>
+                  <input matInput formControlName="correo" />
+                  <mat-error
+                    *ngIf="
+                      form.correo.touched ||
+                      form.correo.dirty ||
+                      form.correo.invalid
+                    "
+                  >
+                    <span
+                      class="mensaje-errror"
+                      *ngIf="form.correo.errors?.required"
+                      >Falta ingresar el correo</span
+                    >
+                    <span
+                      class="mensaje-errror"
+                      *ngIf="form.correo.errors?.pattern"
+                      >Correo invalido</span
+                    >
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="form-1">
+                <mat-form-field
+                  appearance="fill"
+                  style="margin-top: 10px"
+                  class="mat-form-field"
+                >
+                  <mat-label>Contrasena</mat-label>
+                  <input
+                    matInput
+                    [type]="hide ? 'password' : 'text'"
+                    formControlName="contrasena"
+                  />
+                  <mat-error
+                    *ngIf="
+                      form.contrasena.touched ||
+                      form.contrasena.dirty ||
+                      form.contrasena.invalid
+                    "
+                  >
+                    <span
+                      class="mensaje-errror"
+                      *ngIf="form.contrasena.errors?.required"
+                      >Falta ingresar el contrasena</span
+                    >
+                  </mat-error>
+                  <button
+                    mat-icon-button
+                    matSuffix
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide"
+                  >
+                    <mat-icon>{{
+                      hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+            </div>
+            <mat-card-actions class="acciones">
+              <div class="sesion">
+                <button mat-raised-button (click)="login()" class="boton">
+                  Iniciar sesión
+                </button>
+              </div>
+              <div class="cuenta">
+                <p>
+                  ¿No tienes una cuenta?
+                  <span class="re" routerLink="/auth/registrar"
+                    >Registrate</span
+                  >
+                </p>
+              </div>
+            </mat-card-actions>
+          </mat-card-content>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
