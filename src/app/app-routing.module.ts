@@ -8,6 +8,11 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'boca-sana',
+    loadChildren: () =>
+      import('./consultas/consultas.module').then((m) => m.ConsultasModule),
+  },
+  {
     path: '404',
     component: Error404PageComponent,
   },
