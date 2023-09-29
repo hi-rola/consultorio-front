@@ -1,0 +1,48 @@
+.card-titulo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  height: 40px;
+  padding: 5px 10px;
+  background-color: #61a5c2;
+  color: white;
+
+  .titulo-consulta {
+    font-size: 17px;
+    font-weight: 500;
+  }
+}
+
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 40px;
+  margin: 15px 0 15px 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 8px 0 8px 0;
+}
+
+.estatus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hora {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.item-menu {
+  font-size: 16px;
+  font-weight: 400;
+}

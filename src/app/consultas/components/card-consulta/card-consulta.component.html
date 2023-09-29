@@ -1,0 +1,42 @@
+<div class="card-titulo mat-elevation-z3">
+  <span class="titulo-consulta">Consulta</span>
+</div>
+<div class="descripcion">
+  <span class="hora">Fecha: {{ consulta.fecha | date : "shortDate" }}</span>
+  <span class="hora"
+    >Hora: {{ consulta.hora_inicio }} - {{ consulta.hora_fin }}</span
+  >
+</div>
+<mat-divider> </mat-divider>
+<div class="actions">
+  <div class="estatus">
+    <span style="padding-right: 5px">Estatus:</span>
+    <mat-chip
+      [style]="{
+        'background-color':
+          consulta.estado === 1 ? '#bde0fe !important' : '#ef476f !important'
+      }"
+      ><span
+        [ngStyle]="{
+          color: consulta.estado === 0 ? 'white' : 'black'
+        }"
+        >{{ consulta | estatusConsulta }}</span
+      ></mat-chip
+    >
+  </div>
+  <div class="menu">
+    <button
+      *ngIf="consulta.estado === 1"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      matTooltip="Reservar consulta"
+    >
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button (click)="reservar(consulta)" mat-menu-item class="item-menu">
+        Reservar
+      </button>
+    </mat-menu>
+  </div>
+</div>
