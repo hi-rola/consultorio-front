@@ -1,0 +1,24 @@
+<div class="contenedor">
+  <shared-header></shared-header>
+  <div class="main">
+    <consultas-filtro (emitFecha)="filtrar($event)"></consultas-filtro>
+    <div class="no-consultas" *ngIf="consultas.length === 0">
+      <span class="mensaje"
+        >Por el momento no hay consultas disponibles, seleccione otra fecha.
+      </span>
+      <img class="img-calendario" src="assets/calendario-vacio.png" />
+    </div>
+    <div class="consultas">
+      <div
+        class="card-consulta mat-elevation-z3"
+        *ngFor="let consulta of consultas"
+      >
+        <consultas-card-consulta
+          [consulta]="consulta"
+          (emitConsulta)="reservarConsulta($event)"
+        ></consultas-card-consulta>
+      </div>
+    </div>
+  </div>
+  <shared-footer></shared-footer>
+</div>

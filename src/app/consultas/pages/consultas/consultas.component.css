@@ -1,0 +1,32 @@
+.consultas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.card-consulta {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  padding: 0 10px 0 10px;
+}
+
+.no-consultas {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.mensaje {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.img-calendario {
+  width: 200px;
+  margin-top: 30px;
+}
