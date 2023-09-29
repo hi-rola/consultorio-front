@@ -1,0 +1,19 @@
+<div class="menu-filtro">
+  <h2 class="titulo-consultas">Consultas</h2>
+  <div class="filtro">
+    <span class="titulo-filtro">Filtrar por fecha: </span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>tune</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        (click)="filtrar(fecha)"
+        mat-menu-item
+        class="item-menu"
+        *ngFor="let fecha of fechasFiltro"
+      >
+        {{ fecha | nombreDiaFiltro }}
+      </button>
+    </mat-menu>
+  </div>
+</div>
