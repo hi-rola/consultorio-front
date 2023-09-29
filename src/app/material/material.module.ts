@@ -18,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   exports: [
@@ -39,6 +40,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSnackBarModule,
     MatProgressBarModule,
     MatExpansionModule,
+    MatChipsModule,
   ],
 })
 export class MaterialModule {}
