@@ -83,12 +83,16 @@ export class AuthService {
     return this.http.get<AuthResponse>(url, { headers: headers }).pipe(
       map((response) => {
         localStorage.setItem('token', response.token!);
-        this._usuario = {
-          id_usuario: response.id_usuario!,
-          nombre: response.nombre!,
-          apellidos: response.apellidos!,
-          correo: response.correo!,
-        };
+        localStorage.setItem(
+          'user',
+          `${
+            response.id_usuario!.toString() +
+            ',' +
+            response.nombre +
+            ',' +
+            response.apellidos
+          }`
+        );
         return response.ok;
       }),
       catchError((error) => of(false))
