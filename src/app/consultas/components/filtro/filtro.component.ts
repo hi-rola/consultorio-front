@@ -1,23 +1,36 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'consultas-filtro',
   templateUrl: './filtro.component.html',
   styleUrls: ['./filtro.component.css'],
 })
-export class FiltroComponent {
+export class FiltroComponent implements OnInit {
   @Output() public emitFecha = new EventEmitter<string>();
 
-  public fechasFiltro: string[] = [
-    '2023-09-25',
-    '2023-09-26',
-    '2023-09-27',
-    '2023-09-28',
-    '2023-09-29',
-    '2023-09-30',
-  ];
+  public fechasFiltro: string[] = [];
+
+  ngOnInit(): void {
+    this.fechasFiltro = this.getSemanaFiltro();
+  }
 
   filtrar(fecha: string) {
     this.emitFecha.emit(fecha);
+  }
+
+  // Se obtienen las fechas de la semana actual
+  getSemanaFiltro(): string[] {
+    const fechaActual = new Date();
+    let semana: string[] = [];
+
+    for (let i = 1; i <= 7; i++) {
+      let numeroDia = fechaActual.getDate() - fechaActual.getDay() + i;
+      let fecha = new Date(fechaActual.setDate(numeroDia))
+        .toISOString()
+        .slice(0, 10);
+      semana.push(fecha);
+    }
+
+    return semana;
   }
 }
