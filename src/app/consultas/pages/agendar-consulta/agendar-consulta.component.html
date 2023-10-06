@@ -1,0 +1,124 @@
+<div class="contenedor">
+  <shared-header></shared-header>
+  <div class="main">
+    <mat-card class="mat-mdc-elevation-specific mat-elevation-z5">
+      <mat-card-header class="card-header">
+        <div class="div-registrar-consulta">
+          <div class="div-volver-consulta">
+            <button
+              mat-icon-button
+              matTooltip="Volver"
+              matTooltipClass="cerrar-sesion"
+              routerLink="/boca-sana/consultas"
+            >
+              <mat-icon class="icono-volver-estudiante"
+                >keyboard_backspace</mat-icon
+              >
+            </button>
+          </div>
+          <div class="div-titulo-registrar">Agendar consulta</div>
+        </div>
+      </mat-card-header>
+      <form [formGroup]="formAgendarConsulta">
+        <mat-card-content class="card-content">
+          <div class="div-form">
+            <mat-form-field appearance="fill" class="form">
+              <mat-label>Fecha de la consulta</mat-label>
+              <input
+                matInput
+                formControlName="fecha"
+                [matDatepicker]="picker"
+              />
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error
+                *ngIf="
+                  form.fecha.touched || form.fecha.dirty || form.fecha.invalid
+                "
+              >
+                <span class="mensaje-errror" *ngIf="form.fecha.errors?.required"
+                  >Falta ingresar la fecha</span
+                >
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="div-form">
+            <div class="div-form-der">
+              <mat-form-field class="form">
+                <mat-label>Seleccione la hora de inicio</mat-label>
+                <input
+                  matInput
+                  formControlName="hora_inicio"
+                  [ngxTimepicker]="hora_inicio"
+                  readonly
+                  [format]="12"
+                />
+                <ngx-material-timepicker #hora_inicio></ngx-material-timepicker>
+                <mat-error
+                  *ngIf="
+                    form.hora_inicio.touched ||
+                    form.hora_inicio.dirty ||
+                    form.hora_inicio.invalid
+                  "
+                >
+                  <span
+                    class="mensaje-errror"
+                    *ngIf="form.hora_inicio.errors?.required"
+                    >Falta ingresar la hora</span
+                  >
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="div-form-izq">
+              <mat-form-field appearance="fill" class="form">
+                <mat-label>Seleccione la hora de finalización</mat-label>
+                <input
+                  matInput
+                  formControlName="hora_fin"
+                  [ngxTimepicker]="hora_fin"
+                  readonly
+                />
+                <ngx-material-timepicker #hora_fin></ngx-material-timepicker>
+                <mat-error
+                  *ngIf="
+                    form.hora_fin.touched ||
+                    form.hora_fin.dirty ||
+                    form.hora_fin.invalid
+                  "
+                >
+                  <span
+                    class="mensaje-errror"
+                    *ngIf="form.hora_fin.errors?.required"
+                    >Falta ingresar la hora</span
+                  >
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions class="card-action" style="margin-bottom: 50px">
+          <button
+            mat-stroked-button
+            id="boton-guardar"
+            class="mat-elevation-z4"
+            (click)="registrarConsulta()"
+          >
+            Agendar
+          </button>
+          <button
+            mat-stroked-button
+            id="boton-cancelar"
+            class="mat-elevation-z4"
+            routerLink="/boca-sona/consultas"
+          >
+            Cancelar
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+  <shared-footer></shared-footer>
+</div>
