@@ -9,6 +9,12 @@ import { CardConsultaComponent } from './components/card-consulta/card-consulta.
 import { EstatusConsultaPipe } from './pipes/estatus-consulta.pipe';
 import { NombreDiaFiltroPipe } from './pipes/nombre-dia-filtro.pipe';
 import { FiltroComponent } from './components/filtro/filtro.component';
+import { LoaderComponent } from '../loader/loader.component';
+import { RegistraConsultaComponent } from './pages/agendar-consulta/agendar-consulta.component';
+import { ActInfConsultaComponent } from './pages/act-inf-consulta/act-inf-consulta.component';
+import { ConsultarComponent } from './pages/consultar/consultar.component';
+import { InfPacienteComponent } from './components/inf-paciente/inf-paciente.component';
+import { FormConsultarComponent } from './components/form-consultar/form-consultar.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +22,16 @@ import { FiltroComponent } from './components/filtro/filtro.component';
     ConsultasComponent,
     CardConsultaComponent,
     FiltroComponent,
+    LoaderComponent,
 
     //Pipes
     EstatusConsultaPipe,
     NombreDiaFiltroPipe,
+    RegistraConsultaComponent,
+    ActInfConsultaComponent,
+    ConsultarComponent,
+    InfPacienteComponent,
+    FormConsultarComponent,
   ],
   imports: [CommonModule, ConsultasRoutingModule, MaterialModule, SharedModule],
 })
