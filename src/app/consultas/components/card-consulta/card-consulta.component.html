@@ -1,8 +1,8 @@
-<div class="card-titulo mat-elevation-z3">
+<div class="card-titulo mat-elevation-z9">
   <span class="titulo-consulta">Consulta</span>
 </div>
 <div class="descripcion">
-  <span class="hora">Fecha: {{ consulta.fecha | date : "shortDate" }}</span>
+  <span class="hora">Fecha: {{ consulta.fecha | date : "dd/MM/yyyy" }}</span>
   <span class="hora"
     >Hora: {{ consulta.hora_inicio }} - {{ consulta.hora_fin }}</span
   >
@@ -25,17 +25,34 @@
     >
   </div>
   <div class="menu">
-    <button
-      *ngIf="consulta.estado === 1"
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
-      matTooltip="Reservar consulta"
-    >
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Más">
       <mat-icon>more_horiz</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button (click)="reservar(consulta)" mat-menu-item class="item-menu">
+      <button
+        *ngIf="consulta.estado === 1"
+        (click)="reservar(consulta)"
+        mat-menu-item
+        class="item-menu"
+      >
         Reservar
+      </button>
+      <button
+        [routerLink]="[
+          '/boca-sana/actualizar-informacion',
+          consulta.id_consulta
+        ]"
+        mat-menu-item
+        class="item-menu"
+      >
+        Actualizar información
+      </button>
+      <button
+        [routerLink]="['/boca-sana/consultar', consulta.id_consulta]"
+        mat-menu-item
+        class="item-menu"
+      >
+        Consultar
       </button>
     </mat-menu>
   </div>

@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Consulta } from '../../interfaces/consulta.interface';
-import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'consultas-card-consulta',
@@ -10,8 +9,6 @@ import { AuthService } from '../../../auth/services/auth.service';
 export class CardConsultaComponent {
   @Input() public consulta!: Consulta;
   @Output() public emitConsulta = new EventEmitter<Consulta>();
-
-  constructor(private authService: AuthService) {}
 
   reservar(consulta: Consulta) {
     this.emitConsulta.emit(consulta);
