@@ -1,0 +1,36 @@
+<mat-card class="mat-mdc-elevation-specific mat-elevation-z4">
+  <mat-card-content>
+    <div class="informacion">
+      <div class="paciente" *ngIf="informacionUsuarioConsulta">
+        <h3>Información paciente</h3>
+        <b
+          >Nombre:
+          <span
+            >{{ informacionUsuarioConsulta.nombre }}
+            {{ informacionUsuarioConsulta.apellidos }}</span
+          >
+        </b>
+        <b
+          >Correo: <span>{{ informacionUsuarioConsulta.correo }}</span></b
+        >
+      </div>
+      <hr />
+      <div class="consulta" *ngIf="informacionUsuarioConsulta">
+        <h3>Información consulta</h3>
+        <b
+          >Fecha:
+          <span
+            >{{ informacionUsuarioConsulta.fecha | date : "dd/MM/yyyy" }}
+          </span></b
+        >
+        <b
+          >Hora:
+          <span
+            >{{ informacionUsuarioConsulta.hora_inicio }} -
+            {{ informacionUsuarioConsulta.hora_fin }}</span
+          ></b
+        >
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

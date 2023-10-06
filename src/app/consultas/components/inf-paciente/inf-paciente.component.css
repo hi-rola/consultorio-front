@@ -1,0 +1,44 @@
+.informacion {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.paciente {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+hr {
+  border: none;
+  border-left: 1px solid hsla(200, 10%, 50%, 100);
+  height: 60px;
+  width: 2px;
+}
+
+.consulta {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+b {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+span {
+  font-size: 16px;
+  font-weight: 400;
+}
