@@ -1,0 +1,945 @@
+<div class="contenido-accordion">
+  <h2>Formulario de consulta bucal:</h2>
+  <mat-accordion [formGroup]="form" class="example-headers-align" multi>
+    <!-- Arcada sup. der. -->
+    <mat-expansion-panel [expanded]="step === 0" (opened)="fijarStep(0)">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Arcada superior derecha</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="content-expansion" formGroupName="arcadaSupDer">
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Incisivo central:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="incisivo_central_sup_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="incisivo_central_sup_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Incisivo lateral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="incisivo_lateral_sup_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="incisivo_lateral_sup_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Canino:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="canino_sup_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="canino_sup_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Primer premoral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="primer_premolar_sup_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="primer_premolar_sup_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Segundo premoral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="segundo_premolar_sup_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="segundo_premolar_sup_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Primer molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="primer_molar_sup_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="primer_molar_sup_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Segundo molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="segundo_molar_sup_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="segundo_molar_sup_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Tercer molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="tercer_molar_sup_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="tercer_molar_sup_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">
+          Siguiente
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <!-- Arcada sup. izq.-->
+    <mat-expansion-panel [expanded]="step === 1" (opened)="fijarStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Arcada superior derecha</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="content-expansion" formGroupName="arcadaSupIzq">
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Incisivo central:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="incisivo_central_sup_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="incisivo_central_sup_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Incisivo lateral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="incisivo_lateral_sup_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="incisivo_lateral_sup_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Canino:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="canino_sup_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="canino_sup_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Primer premoral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="primer_premolar_sup_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="primer_premolar_sup_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Segundo premoral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="segundo_premolar_sup_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="segundo_premolar_sup_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Primer molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="primer_molar_sup_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="primer_molar_sup_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Segundo molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="segundo_molar_sup_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="segundo_molar_sup_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Tercer molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="tercer_molar_sup_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="tercer_molar_sup_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+        <button mat-button color="primary" (click)="nextStep()">
+          Siguiente
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <!-- Arcada inf. der.-->
+    <mat-expansion-panel [expanded]="step === 2" (opened)="fijarStep(2)">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Arcada superior derecha</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="content-expansion" formGroupName="arcadaInfDer">
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Incisivo central:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="incisivo_central_inf_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="incisivo_central_inf_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Incisivo lateral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="incisivo_lateral_inf_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="incisivo_lateral_inf_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Canino:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="canino_inf_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="canino_inf_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Primer premoral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="primer_premolar_inf_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="primer_premolar_inf_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Segundo premoral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="segundo_premolar_inf_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="segundo_premolar_inf_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Primer molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="primer_molar_inf_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="primer_molar_inf_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Segundo molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="segundo_molar_inf_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="segundo_molar_inf_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Tercer molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="tercer_molar_inf_der_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="tercer_molar_inf_der_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+        <button mat-button color="primary" (click)="nextStep()">
+          Siguiente
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <!-- Arcada inf. izq.-->
+    <mat-expansion-panel [expanded]="step === 3" (opened)="fijarStep(3)">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Arcada superior derecha</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="content-expansion" formGroupName="arcadaInfIzq">
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Incisivo central:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="incisivo_central_inf_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="incisivo_central_inf_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Incisivo lateral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="incisivo_lateral_inf_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="incisivo_lateral_inf_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Canino:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="canino_inf_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="canino_inf_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Primer premoral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="primer_premolar_inf_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="primer_premolar_inf_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Segundo premoral:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="segundo_premolar_inf_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="segundo_premolar_inf_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Primer molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="primer_molar_inf_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="primer_molar_inf_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Segundo molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="segundo_molar_inf_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="segundo_molar_inf_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Tercer molar:</h3>
+          </div>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Clase carie</mat-label>
+              <mat-select formControlName="tercer_molar_inf_izq_cla">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let clase of claseCaries; let i = index"
+                  >{{ clase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Grado carie</mat-label>
+              <mat-select formControlName="tercer_molar_inf_izq_gra">
+                <mat-option
+                  [value]="[i + 1]"
+                  *ngFor="let grado of gradoCaries; let i = index"
+                  >{{ grado }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="grado-carie">
+          <div class="titulo-diente">
+            <h3>Tercer molar:</h3>
+          </div>
+          <div class="form2">
+            <mat-form-field style="width: 100%">
+              <mat-label>Observaciones: </mat-label>
+              <textarea formControlName="mensaje" matInput></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+      </mat-action-row>
+      <div class="acciones">
+        <button
+          (click)="registrar()"
+          mat-stroked-button
+          id="boton"
+          class="mat-elevation-z4"
+        >
+          Registrar diagnóstico
+        </button>
+        <button mat-stroked-button id="boton" class="mat-elevation-z4">
+          Cancelar
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
