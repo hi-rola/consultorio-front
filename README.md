@@ -21,6 +21,15 @@
 **Admin: Actualizar información consulta**
 ![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/5cc3230d-81ab-4f37-a34e-32e3279d776b)
 
+**Admin: Consultar paciente**
+![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/f1dee7f6-4ed8-4922-9d5b-605ae59807b6)
+
+**Usuario: Consultas**
+![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/3beed712-2d14-4540-9586-a4c0fc6f6802)
+
+**Usuario: Mis consultas**
+![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/fd410ed7-f6aa-47e3-9a42-2ceff94bc810)
+
 
 # AppConsultorio
 
