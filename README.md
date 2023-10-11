@@ -1,8 +1,15 @@
 #Inicio de sesión
 
-#Admin-consultas
+**#Admin: Consultas**
 
 ![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/aa75fb3f-b49d-42e1-ac3b-ec28e600fb0c)
+
+**#Admin: Registrar consulta**
+
+![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/638ef090-91f7-4037-ae4c-e81925bfe234)
+
+**#Admin: Actualizar información consulta**
+![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/5cc3230d-81ab-4f37-a34e-32e3279d776b)
 
 
 # AppConsultorio
