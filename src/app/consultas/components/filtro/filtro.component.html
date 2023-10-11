@@ -1,19 +1,32 @@
-<div class="menu-filtro">
-  <h2 class="titulo-consultas">Consultas</h2>
-  <div class="filtro">
-    <span class="titulo-filtro">Filtrar por fecha: </span>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>tune</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button
-        (click)="filtrar(fecha)"
-        mat-menu-item
-        class="item-menu"
-        *ngFor="let fecha of fechasFiltro"
-      >
-        {{ fecha | nombreDiaFiltro }}
-      </button>
-    </mat-menu>
+<mat-card class="menu-filtro mat-mdc-elevation-specific mat-elevation-z5">
+  <div class="titulo">
+    <h2 class="titulo-consultas">Consultas</h2>
   </div>
-</div>
+  <div class="filtro-contenido">
+    <div class="filtro">
+      <span class="titulo-filtro">Filtrar por fecha: </span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>tune</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button
+          (click)="filtrar(fecha)"
+          mat-menu-item
+          class="item-menu"
+          *ngFor="let fecha of fechasFiltro"
+        >
+          {{ fecha | nombreDiaFiltro }}
+        </button>
+      </mat-menu>
+    </div>
+    <div class="registrar">
+      <button
+        routerLink="/admin/registrar-consulta"
+        id="registrar-button"
+        mat-button
+      >
+        Registrar consulta
+      </button>
+    </div>
+  </div>
+</mat-card>

@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ConsultasService } from '../../services/consultas.service';
-import { Consulta } from '../../interfaces/consulta.interface';
 import {
-  MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
+  MatSnackBar,
 } from '@angular/material/snack-bar';
+import { Consulta } from 'src/app/consultas/interfaces/consulta.interface';
+import { ConsultasService } from 'src/app/consultas/services/consultas.service';
+import { AuthService } from '../../../auth/services/auth.service';
+import { AuthResponse } from 'src/app/auth/interfaces/AuthResponse.interface';
 
 @Component({
-  selector: 'consultas-consultas',
+  selector: 'usuarios-consultas',
   templateUrl: './consultas.component.html',
   styleUrls: ['./consultas.component.css'],
 })
 export class ConsultasComponent implements OnInit {
   public consultas: Consulta[] = [];
+  public consultasHistorial: Consulta[] = [];
   public id_usuario!: number;
   public fechaActual!: string;
 
@@ -22,13 +25,19 @@ export class ConsultasComponent implements OnInit {
 
   constructor(
     private consultasService: ConsultasService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.id_usuario = this.getUser();
+    this.id_usuario = this.usuario?.id_usuario!;
     this.fechaActual = this.consultasService.getFechaActualConsultaFiltro();
     this.getConsultasPorFecha();
+    this.getConsultasPorUsuario();
+  }
+
+  get usuario(): AuthResponse | undefined {
+    return this.authService.currentUsuario;
   }
 
   reservarConsulta(consulta: Consulta) {
@@ -37,6 +46,7 @@ export class ConsultasComponent implements OnInit {
       .subscribe((response) => {
         if (response === true) {
           this.getConsultasPorFecha();
+          this.getConsultasPorUsuario();
           this.mostrarSnackBar('¡Consulta reservada exitosamente!');
         } else {
           this.mostrarSnackBar(
@@ -61,18 +71,17 @@ export class ConsultasComponent implements OnInit {
       });
   }
 
+  getConsultasPorUsuario() {
+    this.consultasService
+      .getConsultasPorIdUsuario(this.id_usuario)
+      .subscribe((response) => {
+        this.consultasHistorial = response;
+      });
+  }
+
   filtrar(fecha: string) {
     this.consultasService.getConsultasPorFecha(fecha).subscribe((response) => {
       this.consultas = response;
     });
-  }
-
-  //TODO: Mover a servicio de usuario
-  getUser(): number {
-    return Number(
-      localStorage
-        .getItem('user')
-        ?.substring(0, localStorage.getItem('user')?.indexOf(','))
-    );
   }
 }

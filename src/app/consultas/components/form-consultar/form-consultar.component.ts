@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class FormConsultarComponent implements OnInit {
   @ViewChild(MatAccordion) accordion!: MatAccordion;
   @Input() public id_usuario!: string;
+  @Input() public id_consulta!: number;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   public claseCaries: string[] = [];
@@ -265,7 +266,8 @@ export class FormConsultarComponent implements OnInit {
         tercer_molar_inf_izq_cla!,
         tercer_molar_inf_izq_gra!,
         mensaje!,
-        this.id_usuario
+        this.id_usuario,
+        this.id_consulta
       )
       .subscribe((response) => {
         switch (response.msj) {

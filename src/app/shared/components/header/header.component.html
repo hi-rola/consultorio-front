@@ -4,9 +4,11 @@
       <span mat-button class="logo">Consultorio Dental: Boca Sana</span>
     </div>
     <div class="user">
-      <span class="username">José Rolando</span>
-      <button mat-icon-button>
-        <mat-icon>account_circle</mat-icon>
+      <span class="username"
+        >{{ usuario?.nombre }} {{ usuario?.apellidos }}</span
+      >
+      <button (click)="logout()" mat-icon-button matTooltip="Cerrar sesión">
+        <mat-icon>logout</mat-icon>
       </button>
     </div>
   </div>

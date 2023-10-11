@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'consultas-layout-page',
+  selector: 'usuarios-layout-page',
   templateUrl: './layout-page.component.html',
   styleUrls: ['./layout-page.component.css'],
 })

@@ -15,10 +15,10 @@ export class LoginPageComponent {
 
   formLogin = this.fb.group({
     correo: [
-      'paco3@gmail.com',
+      'paco37@gmail.com',
       [Validators.required, Validators.pattern(this.isValidEmail)],
     ],
-    contrasena: ['paco3', Validators.required],
+    contrasena: ['paco37', Validators.required],
   });
 
   constructor(
@@ -38,6 +38,7 @@ export class LoginPageComponent {
         this.mensajeLogin = true;
       } else {
         //TODO: Router user
+        this.router.navigate(['/boca-sana/consultas']);
       }
     });
   }

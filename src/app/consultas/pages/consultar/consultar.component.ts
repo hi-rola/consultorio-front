@@ -9,7 +9,7 @@ import { InformacionUsuarioConsulta } from '../../interfaces/consulta.interface'
   styleUrls: ['./consultar.component.css'],
 })
 export class ConsultarComponent implements OnInit {
-  public id_consulta: number | undefined;
+  public id_consulta!: number;
   public informacionUsuarioConsulta!: InformacionUsuarioConsulta;
   public id_usuario!: string;
 

@@ -1,6 +1,7 @@
 <div class="contenedor">
   <shared-header></shared-header>
   <div class="main">
+    <app-loader></app-loader>
     <consultas-filtro (emitFecha)="filtrar($event)"></consultas-filtro>
     <div class="no-consultas" *ngIf="consultas.length === 0">
       <span class="mensaje"

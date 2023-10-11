@@ -3,17 +3,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { enviroments } from 'src/enviroments/enviroments';
 import { Observable, catchError, map, of, tap } from 'rxjs';
-import { Usuario } from 'src/app/usuarios/interfaces/usuario.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private baseUrl: string = enviroments.baseUrl;
-  private _usuario!: Usuario;
+  private usuario?: AuthResponse;
 
-  get usuario() {
-    return { ...this._usuario };
+  get currentUsuario(): AuthResponse | undefined {
+    if (!this.usuario) return undefined;
+    return structuredClone(this.usuario);
   }
 
   constructor(private http: HttpClient) {}
@@ -38,7 +38,7 @@ export class AuthService {
             );
           }
         }),
-        map((response) => response)
+        tap((response) => (this.usuario = response))
       );
   }
 
@@ -57,6 +57,7 @@ export class AuthService {
         tap((response) => {
           if (response.ok === true) {
             localStorage.setItem('token', response.token!);
+            this.usuario = response;
             localStorage.setItem(
               'user',
               `${
@@ -73,14 +74,23 @@ export class AuthService {
       );
   }
 
+  logout() {
+    this.usuario = undefined;
+    localStorage.removeItem('token');
+  }
+
   validarToken(): Observable<boolean> {
-    const url = 'this.baseUrl}/auth/renovarToken';
+    const url = `${this.baseUrl}/auth/renovarToken`;
+
+    if (!localStorage.getItem('token')) return of(false);
+
     const headers = new HttpHeaders().set(
       'x-token',
       localStorage.getItem('token') || ''
     );
 
     return this.http.get<AuthResponse>(url, { headers: headers }).pipe(
+      tap((response) => (this.usuario = response)),
       map((response) => {
         localStorage.setItem('token', response.token!);
         localStorage.setItem(

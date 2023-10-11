@@ -19,6 +19,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   exports: [
@@ -41,6 +44,9 @@ import { MatChipsModule } from '@angular/material/chips';
     MatProgressBarModule,
     MatExpansionModule,
     MatChipsModule,
+    MatProgressSpinnerModule,
+    NgxMaterialTimepickerModule,
+    MatTabsModule,
   ],
 })
 export class MaterialModule {}

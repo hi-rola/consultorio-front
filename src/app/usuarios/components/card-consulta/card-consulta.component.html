@@ -20,16 +20,15 @@
             ? '#ef476f !important'
             : '#74a57f !important'
       }"
-    >
-      <span
+      ><span
         [ngStyle]="{
           color:
             consulta.estado === 0 || consulta.estado === 2 ? 'white' : 'black'
         }"
       >
-        {{ consulta | estatusConsulta }}
-      </span>
-    </mat-chip>
+        {{ consulta | estatusConsulta }}</span
+      ></mat-chip
+    >
   </div>
   <div class="menu">
     <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Más">
@@ -38,6 +37,7 @@
     <mat-menu #menu="matMenu">
       <button
         *ngIf="consulta.estado === 1"
+        class="menu"
         (click)="reservar(consulta)"
         mat-menu-item
         class="item-menu"
@@ -45,23 +45,8 @@
         Reservar
       </button>
       <button
-        [routerLink]="['/admin/actualizar-informacion', consulta.id_consulta]"
-        mat-menu-item
-        class="item-menu"
-      >
-        Actualizar información
-      </button>
-      <button
-        *ngIf="consulta.estado === 0"
-        [routerLink]="['/admin/consultar', consulta.id_consulta]"
-        mat-menu-item
-        class="item-menu"
-      >
-        Consultar
-      </button>
-      <button
         *ngIf="consulta.estado === 2"
-        [routerLink]="['/admin/consultar', consulta.id_consulta]"
+        (click)="reservar(consulta)"
         mat-menu-item
         class="item-menu"
       >

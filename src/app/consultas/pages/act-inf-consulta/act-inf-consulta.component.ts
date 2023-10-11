@@ -76,7 +76,7 @@ export class ActInfConsultaComponent implements OnInit {
           switch (response.mensaje) {
             case 'Información actualizada exitosamente':
               this.mostrarSnackBar(response.mensaje);
-              this.router.navigate(['/boca-sana/consultas']);
+              this.router.navigate(['/admin/consultas']);
               break;
             case 'Horario no disponible, ingrese otro hora de inicio y fin':
               this.mostrarSnackBar(response.mensaje);

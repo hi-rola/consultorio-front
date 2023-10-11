@@ -1,0 +1,49 @@
+<div class="contenedor">
+  <shared-header></shared-header>
+  <div class="main-consultas">
+    <mat-tab-group>
+      <mat-tab label="Consultas">
+        <usuarios-consultas-filtro
+          (emitFecha)="filtrar($event)"
+        ></usuarios-consultas-filtro>
+        <div class="no-consultas" *ngIf="consultas.length === 0">
+          <span class="mensaje"
+            >Por el momento no hay consultas disponibles, seleccione otra fecha.
+          </span>
+          <img class="img-calendario" src="assets/calendario-vacio.png" />
+        </div>
+        <div class="consultas">
+          <div
+            class="card-consulta mat-elevation-z3"
+            *ngFor="let consulta of consultas"
+          >
+            <usuarios-card-consulta
+              [consulta]="consulta"
+              (emitConsulta)="reservarConsulta($event)"
+            ></usuarios-card-consulta>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Mis consultas">
+        <div class="no-consultas" *ngIf="consultasHistorial.length === 0">
+          <span class="mensaje"
+            >Por el momento no hay consultas disponibles, seleccione otra fecha.
+          </span>
+          <img class="img-calendario" src="assets/calendario-vacio.png" />
+        </div>
+        <div class="consultas" style="margin-top: 40px">
+          <div
+            class="card-consulta mat-elevation-z3"
+            *ngFor="let consulta of consultasHistorial"
+          >
+            <usuarios-card-consulta
+              [consulta]="consulta"
+              (emitConsulta)="reservarConsulta($event)"
+            ></usuarios-card-consulta>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <shared-footer></shared-footer>
+</div>

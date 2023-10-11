@@ -1,0 +1,23 @@
+.menu-filtro {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 15px;
+}
+
+.titulo-consultas {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.filtro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-filtro {
+  font-size: 16px;
+  font-weight: 400;
+}

@@ -6,6 +6,10 @@ import { Consulta } from '../interfaces/consulta.interface';
 })
 export class EstatusConsultaPipe implements PipeTransform {
   transform(consulta: Consulta): string {
-    return consulta.estado === 0 ? 'Reservado' : 'Disponible';
+    let estado = '';
+    if (consulta.estado === 0) estado = 'Reservado';
+    if (consulta.estado === 1) estado = 'Disponible';
+    if (consulta.estado === 2) estado = 'Consultado';
+    return estado;
   }
 }

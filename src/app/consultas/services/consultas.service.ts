@@ -26,6 +26,12 @@ export class ConsultasService {
     );
   }
 
+  getConsultasPorIdUsuario(id_usuario: number): Observable<Consulta[]> {
+    return this.http.get<Consulta[]>(
+      `${this.baseUrl}/consultas-usuario/` + id_usuario
+    );
+  }
+
   registrarConsulta(
     fecha: string,
     hora_inicio: string,
@@ -145,7 +151,8 @@ export class ConsultasService {
     tercer_molar_inf_izq_cla: string,
     tercer_molar_inf_izq_gra: string,
     mensaje: string,
-    id_usuario: string
+    id_usuario: string,
+    id_consulta: number
   ): Observable<Diagnostico> {
     const body = {
       incisivo_central_sup_der_cla,
@@ -214,6 +221,7 @@ export class ConsultasService {
       tercer_molar_inf_izq_gra,
       mensaje,
       id_usuario,
+      id_consulta,
     };
     return this.http.post<Diagnostico>(`${this.baseUrl}/diagnosticos`, body);
   }
