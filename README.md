@@ -1,14 +1,24 @@
-#Inicio de sesión
+**Inicio de sesión**
 
-**#Admin: Consultas**
+![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/1023e9c1-390e-42e0-a758-3e3a295a38bd)
+
+**Registrarse**
+![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/61e6f845-38b8-40f8-b875-14a8201bbf83)
+
+
+**Admin: Filtrar consultas por día de la semana**
+![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/2fe218d5-b67b-49f9-ba50-543f29d59ce0)
+
+
+**Admin: Consultas**
 
 ![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/aa75fb3f-b49d-42e1-ac3b-ec28e600fb0c)
 
-**#Admin: Registrar consulta**
+**Admin: Registrar consulta**
 
 ![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/638ef090-91f7-4037-ae4c-e81925bfe234)
 
-**#Admin: Actualizar información consulta**
+**Admin: Actualizar información consulta**
 ![image](https://github.com/hi-rola/consultorio-front-end-angular/assets/44506663/5cc3230d-81ab-4f37-a34e-32e3279d776b)
 
 
